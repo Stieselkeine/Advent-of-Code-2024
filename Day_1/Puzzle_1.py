@@ -13,9 +13,12 @@ with open('input.txt') as f:
 li1.sort()
 li2.sort()
 
-#Find the difference between the lists
-li3 = [abs(li1[i]-li2[i]) for i in range(len(li1))]
 
 #Sum the differences
-result = sum(li3)
+result = 0
+
+for i in range(len(li1)):
+    result += abs(li1[i]-li2[i]) 
+
+
 print("Result: "+str(result))

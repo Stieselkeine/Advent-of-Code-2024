@@ -14,16 +14,16 @@ with open('input.txt') as f:
 # li1 = [3,4,2,1,3,3]
 # li2 = [4,3,5,3,9,3]
 
+#Wrapper of the count function to cache the results
 @cache
 def occurencesInSecondList(number :int) -> int:
     return li2.count(number)
 
 
-for i in range(len(li1)):
-    number = li1[i]
-    li1[i] = number * occurencesInSecondList(number)
+# Sum similarity score
+result = 0
+for number in li1:
+    result += number * occurencesInSecondList(number)
 
 
-#Sum the differences
-result = sum(li1)
 print("Result: "+str(result))
